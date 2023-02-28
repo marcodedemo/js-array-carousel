@@ -29,11 +29,22 @@ slideshowImageElement.src = images[index];
 
 arrowUpElement.addEventListener("click", function(){
    
-    // aumento il valore dell'indice 
-    index++;
+    // se l'indice è minore della lunghezza dell'array -1 
+    if (index < images.length -1){
 
-    // mostro l'immagine corrispondente alla posizione dell'array relativa al valore dell'indice
-    slideshowImageElement.src = images[index];
+        // aumento l'indice di 1 e visualizzo l'immagine successiva
+        index++;
+        slideshowImageElement.src = images[index];
+    
+    // altrimenti 
+    } else {
+
+        // reimposto l'indice a 0 e ricomincio la visualizzazione delle immagini 
+        index = 0;
+        slideshowImageElement.src = images[index];
+
+    }
+
 
 })
 
@@ -42,10 +53,20 @@ arrowUpElement.addEventListener("click", function(){
 
 arrowDownElement.addEventListener("click", function(){
    
-    // diminuisco il valore dell'indice 
-    index--;
+    // se l'indice è maggiore di 0
+    if (index > 0){
 
-    // mostro l'immagine corrispondente alla posizione dell'array relativa al valore dell'indice
-    slideshowImageElement.src = images[index];
+        // diminuisco l'indice di 1 e visualizzo l'immagine precedente
+        index--;
+        slideshowImageElement.src = images[index];
+    
+    // altrimenti
+    } else {
+
+        // reimposto l'indice alla lunghezza dell'array -1 e ricomincio la visualizzazione 
+        index = images.length -1 ;
+        slideshowImageElement.src = images[index];
+
+    }
 
 })
